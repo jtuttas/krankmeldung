@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Krankmeldung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>Krankmeldung</h1>
+    </div>
+    <div class="container">
+        <form enctype="multipart/form-data" method="POST" action="index.php">
+            <!--key-->
+
+            <div class="row">
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="form-group"> <label class="mr" for="name">*) Vorname Nachname</label>
+                        <input type="text" name="name" id="name" class="form-control" value="" required placeholder="Name">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="form-group"> <label class="mr" for="klasse">*) Klasse</label>
+                        <input type="text" name="klasse" id="klasse" class="form-control" value="" required placeholder="Klasse">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="form-group"> <label class="mr" for="email">*) Email f. Rückfragen</label>
+                        <input type="text" name="email" id="email" class="form-control" value="" required placeholder="Email">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="form-group"> <label class="mr" for="von">*) Krank von</label>
+                        <input type="date" name="von" id="von" class="form-control" value="" required>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="form-group"> <label class="mr" for="bis"> Krank bis</label>
+                        <input type="date" name="bis" id="bis" class="form-control" value="">
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group"> <label class="mr" for="betrieb">Email Betrieb/Erziehungsberichtigter</label>
+                            <input type="text" name="betrieb" id="betrieb" class="form-control" value="" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="comment">Kommentar</label>
+                        <textarea class="form-control" rows="5" name="comment" id="comment"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group"> <label class="mr" for="anlage"> Anlage</label>
+                            <input type="file" name="anlage" id="anlage" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                    <p class="mr">*) Notwendige Einträge</p>
+                    <button type="submit" class="btn btn-danger">Absenden</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
