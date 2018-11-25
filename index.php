@@ -92,8 +92,9 @@
                 $mail->WordWrap = 50;
 
                 $mail->AddCC($_POST["email"],$_POST["name"]);
-                if ($_POST["betrieb]"]) {
-                    $mail->AddCC($_POST["betrieb"]);
+                if ($_POST["betrieb"]) {
+                    $mail->AddCC($_POST["betrieb"],$_POST["betrieb"]);
+                    echo "betrieb";
                 }
                 // Sending message and checking status
                 if (!$mail->send()) {
