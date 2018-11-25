@@ -31,7 +31,7 @@
                     $betreff=$betreff." bis ".$_POST["bis"];
                 }
                 $text="Sehr geehrte Damen und Herren,\r\n";
-                $text = $text."Hiemit melde ich (".$_POST["name"]." aus der Klasse ".$_POST["klasse"].") krank ";
+                $text = $text."hiermit melde ich (".$_POST["name"]." aus der Klasse ".$_POST["klasse"].") mich krank ";
                 if ($_POST["bis"]) {
                     $text=$text." vom ".$_POST["von"]." bis ".$_POST["bis"].".";
                 }
@@ -93,8 +93,7 @@
 
                 $mail->AddCC($_POST["email"],$_POST["name"]);
                 if ($_POST["betrieb"]) {
-                    $mail->AddCC($_POST["betrieb"],$_POST["betrieb"]);
-                    echo "betrieb";
+                    $mail->AddCC($_POST["betrieb"],$_POST["betrieb"]);                    
                 }
                 // Sending message and checking status
                 if (!$mail->send()) {
