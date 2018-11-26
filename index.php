@@ -20,23 +20,25 @@
             }
             else {
                 $answer= file_get_contents("answer.html");
+                $fromDate=date_create($_POST["von"]);
+                $toDate=date_create($_POST["bis"]);
                 $msg="Ihre Krankmeldung wurde gesendet an $recipient. Eine Kopie der Krankmeldung wurde geschickt an ".$_POST["email"];                
                 if ($_POST["betrieb"]) {
                     $msg=$msg." und an ".$_POST["betrieb"];
                 }                
                 $answer=str_replace("<!--msg-->",$msg,$answer);
                 echo $answer;
-                $betreff = "Krankmeldung von ".$_POST["name"]." (Klasse: ".$_POST["klasse"].") vom ".$_POST["von"];
+                $betreff = "Krankmeldung von ".$_POST["name"]." (Klasse: ".$_POST["klasse"].") vom ".date_format($fromDate,"d.m.Y");
                 if ($_POST["bis"]) {
-                    $betreff=$betreff." bis ".$_POST["bis"];
+                    $betreff=$betreff." bis ".date_format($toDate,"d.m.Y");
                 }
                 $text="Sehr geehrte Damen und Herren,\r\n";
                 $text = $text."hiermit melde ich (".$_POST["name"]." aus der Klasse ".$_POST["klasse"].") mich krank ";
                 if ($_POST["bis"]) {
-                    $text=$text." vom ".$_POST["von"]." bis ".$_POST["bis"].".";
+                    $text=$text." vom ".date_format($fromDate,"d.m.Y")." bis ".date_format($toDate,"d.m.Y").".";
                 }
                 else {
-                    $text=$text."für den ".$_POST["von"].".";
+                    $text=$text."für den ".date_format($fromDate,"d.m.Y").".";
                 }             
                 if ($_POST["comment"]) {
                     $text=$text."\r\n\r\n";
